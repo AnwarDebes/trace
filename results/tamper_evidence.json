@@ -1,0 +1,62 @@
+{
+  "host": {
+    "python": "3.14.3",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "n_sessions": 40,
+  "tampers": {
+    "modify_event": {
+      "trials": 40,
+      "detection_rate": 1.0,
+      "localised_rate": 1.0,
+      "entry_localised_rate": 1.0
+    },
+    "modify_receipt_value": {
+      "trials": 40,
+      "detection_rate": 1.0,
+      "localised_rate": 1.0,
+      "entry_localised_rate": 1.0
+    },
+    "modify_verdict": {
+      "trials": 40,
+      "detection_rate": 1.0,
+      "localised_rate": 1.0,
+      "entry_localised_rate": 1.0
+    },
+    "delete_entry": {
+      "trials": 40,
+      "detection_rate": 1.0,
+      "localised_rate": 1.0,
+      "entry_localised_rate": 1.0
+    },
+    "insert_entry": {
+      "trials": 40,
+      "detection_rate": 1.0,
+      "localised_rate": 1.0,
+      "entry_localised_rate": 1.0
+    },
+    "reorder_entries": {
+      "trials": 40,
+      "detection_rate": 1.0,
+      "localised_rate": 1.0,
+      "entry_localised_rate": 1.0
+    }
+  },
+  "security_property": "tamper-evidence (SHA-256 hash chain + Merkle root) + symmetric authentication (HMAC-SHA-256, RFC 2104; repudiable, not non-repudiation)",
+  "clean_verify_rate": 1.0,
+  "verify_latency_us": {
+    "mean": 932.6649999707115,
+    "std": 347.4845095547773,
+    "n": 40,
+    "ci95_lo": 824.978434792387,
+    "ci95_hi": 1040.351565149036,
+    "min": 539.300000127696,
+    "max": 2163.9999999933934
+  },
+  "mean_entries_per_session": 33.075,
+  "bytes_per_entry_estimate": 469.85714285714283,
+  "forged_signature_detection_rate": 1.0,
+  "forged_signature_caught_by_sig_rate": 1.0
+}

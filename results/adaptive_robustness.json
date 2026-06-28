@@ -1,0 +1,142 @@
+{
+  "host": {
+    "python": "3.14.3",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "adaptive_attacker": [
+    {
+      "n_exports": 0,
+      "detection_rate": {
+        "mean": 0.0,
+        "std": 0.0,
+        "n": 12,
+        "ci95_lo": 0.0,
+        "ci95_hi": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    {
+      "n_exports": 1,
+      "detection_rate": {
+        "mean": 0.0,
+        "std": 0.0,
+        "n": 12,
+        "ci95_lo": 0.0,
+        "ci95_hi": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    {
+      "n_exports": 2,
+      "detection_rate": {
+        "mean": 0.0,
+        "std": 0.0,
+        "n": 12,
+        "ci95_lo": 0.0,
+        "ci95_hi": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    {
+      "n_exports": 3,
+      "detection_rate": {
+        "mean": 1.0,
+        "std": 0.0,
+        "n": 12,
+        "ci95_lo": 1.0,
+        "ci95_hi": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      }
+    },
+    {
+      "n_exports": 4,
+      "detection_rate": {
+        "mean": 1.0,
+        "std": 0.0,
+        "n": 12,
+        "ci95_lo": 1.0,
+        "ci95_hi": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      }
+    },
+    {
+      "n_exports": 5,
+      "detection_rate": {
+        "mean": 1.0,
+        "std": 0.0,
+        "n": 12,
+        "ci95_lo": 1.0,
+        "ci95_hi": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      }
+    },
+    {
+      "n_exports": 6,
+      "detection_rate": {
+        "mean": 1.0,
+        "std": 0.0,
+        "n": 12,
+        "ci95_lo": 1.0,
+        "ci95_hi": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      }
+    }
+  ],
+  "obfuscation": {
+    "plain_recall": {
+      "mean": 0.7333333333333333,
+      "std": 0.06236095644623237,
+      "n": 12,
+      "ci95_lo": 0.6980493006420015,
+      "ci95_hi": 0.768617366024665,
+      "min": 0.6,
+      "max": 0.85
+    },
+    "space_out_recall": {
+      "mean": 0.7208333333333333,
+      "std": 0.06281486345370076,
+      "n": 12,
+      "ci95_lo": 0.6852924785757117,
+      "ci95_hi": 0.7563741880909549,
+      "min": 0.5833333333333334,
+      "max": 0.85
+    },
+    "leetspeak_recall": {
+      "mean": 0.7138888888888889,
+      "std": 0.06584084473195065,
+      "n": 12,
+      "ci95_lo": 0.6766359240478181,
+      "ci95_hi": 0.7511418537299597,
+      "min": 0.5833333333333334,
+      "max": 0.85
+    },
+    "repeat_vowels_recall": {
+      "mean": 0.7138888888888889,
+      "std": 0.06584084473195065,
+      "n": 12,
+      "ci95_lo": 0.6766359240478181,
+      "ci95_hi": 0.7511418537299597,
+      "min": 0.5833333333333334,
+      "max": 0.85
+    }
+  },
+  "transfer": {
+    "prompt_injection__to__jailbreak": {
+      "in_domain_f1": 0.849056603773585,
+      "cross_domain_f1": 0.7131782945736435
+    },
+    "jailbreak__to__prompt_injection": {
+      "in_domain_f1": 0.966542750929368,
+      "cross_domain_f1": 0.208955223880597
+    }
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "host": {
+    "python": "3.14.3",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "assumed_cpu_watts": 15.0,
+  "note_energy": "energy_proxy = latency * assumed_cpu_watts; ORDER-OF-MAGNITUDE proxy, not measured",
+  "content_sweep": [
+    {
+      "n_clauses": 100,
+      "test_f1": 0.803921568627451,
+      "latency": {
+        "median_us": 94.14999999535212,
+        "p99_us": 299.0350000345622,
+        "mean_us": 112.85050000878982,
+        "n": 200
+      },
+      "model_kb": 6.25,
+      "throughput_per_s": 10621.348911836078,
+      "energy_proxy_uJ": 1412.2499999302818
+    },
+    {
+      "n_clauses": 200,
+      "test_f1": 0.849056603773585,
+      "latency": {
+        "median_us": 106.74999998627754,
+        "p99_us": 427.7360001151462,
+        "mean_us": 124.90249999018488,
+        "n": 200
+      },
+      "model_kb": 12.5,
+      "throughput_per_s": 9367.681500033234,
+      "energy_proxy_uJ": 1601.2499997941632
+    },
+    {
+      "n_clauses": 400,
+      "test_f1": 0.8521739130434782,
+      "latency": {
+        "median_us": 208.4500001728884,
+        "p99_us": 487.8910002662448,
+        "mean_us": 232.43200000251818,
+        "n": 200
+      },
+      "model_kb": 25.0,
+      "throughput_per_s": 4797.313500458624,
+      "energy_proxy_uJ": 3126.750002593326
+    },
+    {
+      "n_clauses": 800,
+      "test_f1": 0.8448275862068966,
+      "latency": {
+        "median_us": 336.90000009301,
+        "p99_us": 1245.7690003157018,
+        "mean_us": 403.02699999983815,
+        "n": 200
+      },
+      "model_kb": 50.0,
+      "throughput_per_s": 2968.239832959109,
+      "energy_proxy_uJ": 5053.50000139515
+    }
+  ],
+  "behavior": {
+    "latency": {
+      "median_us": 4.900000021734741,
+      "p99_us": 15.2000002344721,
+      "mean_us": 5.505400001993621,
+      "n": 2000
+    },
+    "monitor_memory_bytes": 322,
+    "throughput_per_s": 204081.63174782423,
+    "energy_proxy_uJ": 73.50000032602111
+  },
+  "ledger_scaling": [
+    {
+      "n_entries": 50,
+      "append_us_per_entry": 37.171999993006466,
+      "verify_total_us": 1105.8000000048196,
+      "verify_us_per_entry": 22.116000000096392,
+      "bytes_per_entry": 372.92,
+      "verify_ok": true
+    },
+    {
+      "n_entries": 100,
+      "append_us_per_entry": 19.909999996343686,
+      "verify_total_us": 3654.7999998219893,
+      "verify_us_per_entry": 36.54799999821989,
+      "bytes_per_entry": 370.47,
+      "verify_ok": true
+    },
+    {
+      "n_entries": 200,
+      "append_us_per_entry": 33.50849999833372,
+      "verify_total_us": 5791.799999769864,
+      "verify_us_per_entry": 28.958999998849322,
+      "bytes_per_entry": 372.635,
+      "verify_ok": true
+    },
+    {
+      "n_entries": 400,
+      "append_us_per_entry": 22.825250000551023,
+      "verify_total_us": 9161.600000425096,
+      "verify_us_per_entry": 22.90400000106274,
+      "bytes_per_entry": 370.1175,
+      "verify_ok": true
+    },
+    {
+      "n_entries": 800,
+      "append_us_per_entry": 31.132125000112868,
+      "verify_total_us": 18259.59999996485,
+      "verify_us_per_entry": 22.82449999995606,
+      "bytes_per_entry": 379.59875,
+      "verify_ok": true
+    }
+  ]
+}
