@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="TRACE logo">
+  <defs>
+    <linearGradient id="badge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#062e2b"/>
+    </linearGradient>
+    <linearGradient id="shield" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2dd4bf"/>
+      <stop offset="1" stop-color="#0d9488"/>
+    </linearGradient>
+  </defs>
+
+  <!-- badge -->
+  <rect x="2" y="2" width="124" height="124" rx="28" fill="url(#badge)"/>
+  <rect x="2.5" y="2.5" width="123" height="123" rx="27.5" fill="none" stroke="#134e4a" stroke-width="2"/>
+
+  <!-- shield (the runtime guardrail) -->
+  <path d="M64 20 L100 33 L100 64 C100 90 84 104 64 112 C44 104 28 90 28 64 L28 33 Z"
+        fill="none" stroke="url(#shield)" stroke-width="5" stroke-linejoin="round"/>
+
+  <!-- check mark (verified / certified) -->
+  <path d="M46 65 L58 78 L84 47" fill="none" stroke="url(#shield)" stroke-width="8"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- hash-chain ledger: three linked entries along the base -->
+  <g fill="none" stroke="#5eead4" stroke-width="3" opacity="0.9">
+    <rect x="49" y="90" width="12" height="8" rx="4"/>
+    <rect x="58" y="90" width="12" height="8" rx="4"/>
+    <rect x="67" y="90" width="12" height="8" rx="4"/>
+  </g>
+</svg>
