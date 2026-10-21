@@ -4,6 +4,19 @@ All notable changes to TRACE are documented here.  The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses
 [Semantic Versioning](https://semver.org/).
 
+## [1.1.0] - 2026-10-21
+
+### Added
+- **Live demo** (`live/`, published at https://anwardebes.github.io/trace/): the
+  content guard, the five temporal monitors, the adapters and the certificate
+  ledger ported to JavaScript, around five scripted agent sessions in three
+  providers' wire formats, with a per-call comparison on every step.
+- Tamper mode: edit any logged field of a sealed session and the independent
+  verifier fails at that entry.
+- The browser writes the exact ledger format of `tracekit` (canonical JSON,
+  SHA-256 chain, HMAC-SHA256, Merkle root). CI checks that its ledgers pass
+  `verify_ledger` in Python, along with Node tests for monitor semantics.
+
 ## [1.0.0] - 2026-06-24
 
 First public release accompanying the paper.

@@ -9,6 +9,7 @@
 [![Tests](https://img.shields.io/badge/tests-40%20passing-brightgreen)](tests/)
 [![Paper](https://img.shields.io/badge/paper-PDF-b31b1b)](paper/trace.pdf)
 [![Datasets](https://img.shields.io/badge/data-Apache--2.0-blue)](data/)
+[![Live demo](https://img.shields.io/badge/live%20demo-open%20in%20your%20browser-2dd4bf)](https://anwardebes.github.io/trace/)
 
 **A certifying runtime guardrail for agentic AI: an interpretable, CPU-only,
 sub-millisecond monitor that wraps any agent and emits a tamper-evident,
@@ -22,7 +23,7 @@ TRACE is a guardrail built on **propositional Tsetlin logic** instead of a
 multi-billion-parameter neural network. Every decision it makes is a Boolean
 clause over named features, so it is auditable by construction. It has three
 components on one logic substrate (the Echo-Trace Tsetlin Automaton from
-[THGTM](../THGTM)):
+[THGTM](https://github.com/AnwarDebes/THGTM)):
 
 - a **content guard**: a Tsetlin Machine that flags unsafe text (prompt
   injection / jailbreak) with **human-readable clauses** like
@@ -37,6 +38,16 @@ Model-agnostic adapters normalise OpenAI / DeepSeek / Anthropic tool calls, so
 one policy and one certificate format span every agent.
 
 The accompanying paper is at [`paper/trace.pdf`](paper/trace.pdf).
+
+## Live demo
+
+**[Open the live demo](https://anwardebes.github.io/trace/)**: TRACE around a simulated agent session, in your browser.
+
+https://github.com/user-attachments/assets/6f27f27e-1739-479d-b6f1-5f67154439fa
+
+Five sessions, each one a single click: a slow-roll exfiltration where every email looks normal and the third one breaks `count_le(export, 2, 50)`, a web page that hides instructions for the agent and is stopped by the content guard, an unlogged read of customer data, a payment before approval, and an out-of-role tool. Each tool call arrives in a different provider's wire format, and next to TRACE's verdict the page shows what the best memoryless per-call filter would have done.
+
+Then the ledger: seal the session, verify it, switch on tamper mode, erase one event, and watch verification fail at exactly that entry. The page writes the same ledger format as the Python package, and CI checks that its ledgers pass `tracekit.ledger.verify_ledger`. Code and tests are in [`live/`](live/).
 
 ## Quick start
 
@@ -106,6 +117,7 @@ TRACE's bounded-memory monitors keep **both** ASR and FPR near zero.
 | `paper/trace.tex` | the paper source (compiles with `pdflatex`) |
 | `tests/` | 40 unit tests |
 | `data/` | vendored Apache-2.0 datasets (pinned) |
+| `live/` | the live demo: guard, monitors and ledger ported to the browser, with tests and a Python cross-check |
 
 ## Limitations
 
