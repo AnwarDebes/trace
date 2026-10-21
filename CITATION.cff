@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "TRACE"
+type: software
+authors:
+  - family-names: "Debes"
+    given-names: "Anwar"
+repository-code: "https://github.com/AnwarDebes/trace"
+license: MIT
+preferred-citation:
+  type: report
+  title: "TRACE: A Tsetlin Runtime Assurance and Certification Engine for Interpretable, Tamper-Evident Guardrails on Agentic AI"
+  authors:
+    - family-names: "Debes"
+      given-names: "Anwar"
+  year: 2026
+  url: "https://github.com/AnwarDebes/trace/blob/main/paper/trace.pdf"
