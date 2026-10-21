@@ -27,7 +27,7 @@ from .ledger import (
 )
 from .engine import TRACEEngine, InputDecision
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 
 __all__ = [
     "ETTABank", "EchoTraceAutomaton",
