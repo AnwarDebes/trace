@@ -84,7 +84,7 @@ All numbers are produced by `make reproduce` on a single CPU (Intel i7-1165G7),
 | **Component ablation** (overall attack recall) | content-only 0.505, behaviour-only 0.667, **combined 0.911** |
 | **Tamper-evidence** (6 attack classes + forgery) | **100 %** detected and localised |
 | **Systems** | behaviour step **4.9 µs / 322 B**; ledger ~373 B/entry, verification linear |
-| **Robustness** (honest negative) | cross-dataset F1 collapses 0.967 → **0.209** (distribution shift) |
+| **Robustness** (negative result) | cross-dataset F1 collapses 0.967 → **0.209** (distribution shift) |
 
 The core scientific finding (E2): the **memoryless per-call paradigm** (what
 every per-request guardrail implements) is caught in a bind on temporal
@@ -107,7 +107,7 @@ TRACE's bounded-memory monitors keep **both** ASR and FPR near zero.
 | `tests/` | 40 unit tests |
 | `data/` | vendored Apache-2.0 datasets (pinned) |
 
-## Honest limitations
+## Limitations
 
 This is v1.0; I am explicit about what does **not** work:
 
