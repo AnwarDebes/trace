@@ -4,7 +4,7 @@ A simulated agent session under TRACE, in the browser: the content guard, the
 temporal monitors and the certificate ledger, ported to JavaScript from `tracekit`
 and run against scripted tool calls in three providers' wire formats.
 
-**Open it:** https://anwardebes.github.io/TRACE/
+**Open it:** https://anwardebes.github.io/trace/
 
 ## What runs where
 
