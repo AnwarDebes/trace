@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TRACE live: an agent session under a certifying guardrail</title>
+<meta name="description" content="A simulated AI agent session under TRACE: a readable content guard, temporal monitors with constant memory, and a signed ledger that TRACE's own Python verifier accepts. Runs in your browser.">
+<meta name="theme-color" content="#050d0c">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TRACE live: every call looked innocent, the session wasn't">
+<meta property="og:description" content="Watch a certifying runtime guardrail catch a slow-roll exfiltration, a poisoned web page and a payment before approval, then break its own log on purpose.">
+<meta property="og:image" content="https://anwardebes.github.io/TRACE/og.jpg">
+<meta property="og:url" content="https://anwardebes.github.io/TRACE/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="app.css">
+<script type="module" src="app.js"></script>
+</head>
+<body>
+<a class="skip" href="#console">Skip to the session</a>
+<header class="top">
+  <a class="brand" href="./" aria-label="TRACE live, home">
+    <img src="logo.svg" alt="" width="30" height="30">
+    <span class="name">TRACE</span>
+    <span class="tag">live</span>
+  </a>
+  <nav aria-label="Project links">
+    <a href="https://github.com/AnwarDebes/TRACE" target="_blank" rel="noopener">Code</a>
+    <a href="https://github.com/AnwarDebes/TRACE/blob/main/paper/trace.pdf" target="_blank" rel="noopener">Paper</a>
+    <a href="https://anwardebes.github.io/" target="_blank" rel="noopener">Anwar Debes</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="hero-title">
+    <p class="eyebrow">Runtime assurance for AI agents</p>
+    <h1 id="hero-title">Every call looked innocent.<br><span class="grad">The session wasn’t.</span></h1>
+    <p class="lede">TRACE wraps an agent in three things: a content guard you can read, temporal monitors whose memory never grows, and a signed ledger that anyone can re-check without the model. Below, simulated agent sessions run through all three.</p>
+    <div class="hero-row">
+      <a class="go" id="start" href="#console"><span class="play" aria-hidden="true"></span>Watch a session</a>
+      <p class="live-note"><span class="dot" aria-hidden="true"></span>Runs entirely in your browser. Nothing is sent anywhere.</p>
+    </div>
+  </section>
+
+  <section class="console" id="console" aria-label="Agent session">
+    <div class="toolbar">
+      <div class="tabs" id="tabs" role="tablist" aria-label="Sessions"></div>
+      <div class="controls">
+        <button type="button" class="ctl" id="play" aria-label="Play the session"><span class="i-play" aria-hidden="true"></span><span class="lbl">Play</span></button>
+        <button type="button" class="ctl" id="step">Step</button>
+        <button type="button" class="ctl" id="reset">Reset</button>
+      </div>
+    </div>
+    <p class="blurb" id="blurb"></p>
+
+    <div class="grid">
+      <article class="card" id="session-card" aria-labelledby="session-title">
+        <header class="card-head">
+          <span class="step" aria-hidden="true">1</span>
+          <h2 id="session-title">Agent session</h2>
+          <span class="meta">3 wire formats · 1 policy</span>
+        </header>
+        <ol class="steps" id="steps" aria-live="polite"></ol>
+        <div class="empty" id="empty">Press <b>Play</b> or <b>Step</b> to run the session.</div>
+        <details class="own" id="own">
+          <summary>Add your own step</summary>
+          <div class="palette" id="palette"></div>
+          <form class="check" id="check-form">
+            <label class="sr" for="check-text">Text for the content guard</label>
+            <input id="check-text" type="text" autocomplete="off" spellcheck="false" placeholder="Text the agent is about to read">
+            <button type="submit" class="ctl">Check</button>
+          </form>
+        </details>
+      </article>
+
+      <article class="card" id="monitor-card" aria-labelledby="monitor-title">
+        <header class="card-head">
+          <span class="step" aria-hidden="true">2</span>
+          <h2 id="monitor-title">Policy monitors</h2>
+          <span class="meta" id="memory"></span>
+        </header>
+        <div class="monitors" id="monitors"></div>
+        <div class="verdict" id="session-verdict" aria-live="polite"></div>
+      </article>
+
+      <article class="card" id="ledger-card" aria-labelledby="ledger-title">
+        <header class="card-head">
+          <span class="step" aria-hidden="true">3</span>
+          <h2 id="ledger-title">Certificate ledger</h2>
+          <span class="meta">hash chain · HMAC</span>
+        </header>
+        <ol class="chain" id="chain"></ol>
+        <div class="ledger-actions">
+          <button type="button" class="ctl" id="seal">Seal</button>
+          <button type="button" class="ctl" id="verify">Verify</button>
+          <button type="button" class="ctl warn" id="tamper" aria-pressed="false">Tamper</button>
+        </div>
+        <p class="tamper-hint" id="tamper-hint" hidden>Tamper mode: click an entry to change what it says, then press <b>Verify</b>.</p>
+        <div class="cert" id="cert" aria-live="polite"></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="how" aria-labelledby="how-title">
+    <h2 id="how-title">How it works</h2>
+    <ol class="steps-how">
+      <li><b>Text first.</b> Anything the agent is about to read goes through the content guard: a Tsetlin machine whose 200 rules are ANDs of words. Every unsafe rule that fires is logged with a small CNF receipt of why.</li>
+      <li><b>Calls as events.</b> An adapter turns each tool call, in any provider’s format, into events like <code>export</code> or <code>sensitive_read</code>. The policy speaks only in events, so it moves between agents unchanged.</li>
+      <li><b>Memory that never grows.</b> Each rule is an online temporal monitor (always, count, response, precedence). Its state depends on the policy, not on how long the agent runs.</li>
+      <li><b>A log you can’t quietly edit.</b> Every decision is hash-chained and signed, the session is sealed with a Merkle root, and a verifier replays it without the model. This page writes the same format as the Python package: its ledgers pass TRACE’s own <code>verify_ledger</code>.</li>
+    </ol>
+    <div class="limits">
+      <h3>What this demo is and is not</h3>
+      <ul>
+        <li>The agent is simulated: the tool calls are scripted, the guard and monitors that judge them are real.</li>
+        <li>The content guard learned word cues from one dataset. It scores 84% on that dataset’s held-out split, and the paper reports that it falls apart on a different corpus.</li>
+        <li>Monitors catch only what a policy states. The HMAC key is shared and shown here (<code>demo-session-key</code>), so the ledger proves integrity to whoever holds the key, not authorship.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <p><b>TRACE</b> by <a href="https://anwardebes.github.io/" target="_blank" rel="noopener">Anwar Debes</a> · MIT · content guard trained on deepset/prompt-injections (Apache-2.0) · fonts: Schibsted Grotesk, STIX Two, JetBrains Mono (OFL)</p>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

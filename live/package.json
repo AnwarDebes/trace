@@ -1,0 +1,10 @@
+{
+  "name": "trace-agent-firewall",
+  "private": true,
+  "type": "module",
+  "description": "TRACE in the browser: content guard, temporal monitors and a signed ledger around a simulated agent session.",
+  "scripts": {
+    "test": "node --test tests/monitors.test.mjs tests/ledger.test.mjs"
+  },
+  "license": "MIT"
+}
