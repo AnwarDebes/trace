@@ -43,7 +43,14 @@ The accompanying paper is at [`paper/trace.pdf`](paper/trace.pdf).
 
 **[Open the live demo](https://anwardebes.github.io/trace/)**: TRACE around a simulated agent session, in your browser.
 
+<a href="https://anwardebes.github.io/trace/"><img src="docs/film-preview.webp" width="100%" alt="TRACE: your agent sends an email, and another, and the session turns out to be an attack. Click to open the live demo."></a>
+
+<details>
+<summary>▶ Watch the 47-second film with sound</summary>
+
 https://github.com/user-attachments/assets/6f27f27e-1739-479d-b6f1-5f67154439fa
+
+</details>
 
 Five sessions, each one a single click: a slow-roll exfiltration where every email looks normal and the third one breaks `count_le(export, 2, 50)`, a web page that hides instructions for the agent and is stopped by the content guard, an unlogged read of customer data, a payment before approval, and an out-of-role tool. Each tool call arrives in a different provider's wire format, and next to TRACE's verdict the page shows what the best memoryless per-call filter would have done.
 
