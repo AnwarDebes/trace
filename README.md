@@ -21,9 +21,18 @@ independently-verifiable certificate of every session.**
 
 TRACE is a guardrail built on **propositional Tsetlin logic** instead of a
 multi-billion-parameter neural network. Every decision it makes is a Boolean
-clause over named features, so it is auditable by construction. It has three
-components on one logic substrate (the Echo-Trace Tsetlin Automaton from
-[THGTM](https://github.com/AnwarDebes/THGTM)):
+clause over named features, so it is auditable by construction. Why that
+matters: an agent can do damage across several tool calls that each look
+harmless on their own. A filter that judges one call at a time either misses
+that (in the trajectory experiment, slow-roll exfiltration got through every
+time) or catches it only by flagging every benign session. TRACE watches the
+whole session and seals it in a certificate anyone can re-verify without the
+model.
+
+▶ See this project in the film *Show Its Work*: https://youtu.be/pefnyZ-oCcM?t=415
+
+It has three components on one logic substrate (the Echo-Trace Tsetlin
+Automaton from [THGTM](https://github.com/AnwarDebes/THGTM)):
 
 - a **content guard**: a Tsetlin Machine that flags unsafe text (prompt
   injection / jailbreak) with **human-readable clauses** like
