@@ -31,6 +31,8 @@ model.
 
 ▶ See this project in the film *Show Its Work*: https://youtu.be/pefnyZ-oCcM?t=415
 
+▶ Watch it in 40 seconds: https://anwardebes.github.io/shorts/#trace
+
 It has three components on one logic substrate (the Echo-Trace Tsetlin
 Automaton from [THGTM](https://github.com/AnwarDebes/THGTM)):
 
